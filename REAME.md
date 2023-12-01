@@ -4,4 +4,4 @@ Run
 
 Deploy
 ------
-    cargo shuttle deploy --ad
+    cargo shuttle deploy --allow-dirty --no-test
