@@ -29,6 +29,16 @@ impl TestApp {
             .await
             .expect("app to live")
     }
+
+    pub async fn post<D: serde::Serialize>(&self, path: &str, data: &D) -> reqwest::Response {
+        let client = reqwest::Client::new();
+        client
+            .post(format!("{}{path}", self.address))
+            .json(data)
+            .send()
+            .await
+            .expect("app to live")
+    }
 }
 
 impl Drop for TestApp {

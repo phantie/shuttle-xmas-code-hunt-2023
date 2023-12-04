@@ -3,6 +3,7 @@ pub fn router() -> Router {
 
         .nest("", tasks::minus_one::router())
         .nest("", tasks::one::router())
+        .nest("", tasks::four::router())
 
         /* -_- */
     ;
